@@ -22,9 +22,17 @@ io.on('connection', client => {
 
     client.on("location", data=>{
         console.log(data);
-        io.emit(`location/${data.imei}/${data.merchant_id}`, data);
-        io.emit(`location/${data.merchant_id}`, data);
+        const merchantId=data.merchant_id;
+        delete data.merchant_id;
+        io.emit(`location/${data.imei}/${merchantId}`, data);
+        // io.emit(`location/${data.merchant_id}`, data);
     });
+
+    client.on("locations", data=>{
+        console.log(data);
+
+        io.emit(`locations/${data.merchant_id}`, data.data);
+    })
 
     client.on("status", data=>{
         console.log(data);
