@@ -10,7 +10,10 @@
   "author": "Shane Romel",
   "license": "ISC",
   "dependencies": {
-    "mqtt": "^2.18.8",
-    "socket.io": "^2.2.0"
+    "dotenv": "^6.2.0",
+    "jsonwebtoken": "^8.4.0",
+    "mysql": "^2.16.0",
+    "socket.io": "^2.2.0",
+    "socketio-auth": "^0.1.1"
   }
 }
