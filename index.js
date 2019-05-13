@@ -129,7 +129,7 @@ function postAuthenticate(socket, data){
 
     client.on("battery", data=>{
         console.log(data);
-        io.emit(`battery_status/${data.merchant_id}`)
+        io.emit(`battery_status/${data.merchant_id}`, data)
     });
 
 }
